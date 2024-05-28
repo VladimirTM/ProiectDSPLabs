@@ -38,10 +38,17 @@ void A1(void)
 
 void A2(void)
 {
+	sei();
+	init_LED();
+	init_clock();
 	TIMSK |= 1 << OCIE1A;
+	while (1)
+	{
+	}
+	cli();
 }
 
-ISR(TIMER1_COMPA_vect)
-{
-	toggle();
-}
+//ISR(TIMER1_COMPA_vect)
+//{
+//	toggle();
+//}

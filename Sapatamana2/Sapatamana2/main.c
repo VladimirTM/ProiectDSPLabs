@@ -10,7 +10,9 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
+#include <stdint.h>
 #include "timer.h"
+#include "7segment.h"
 
 // perioada de 100ms
 // frecventa de 14.7456MHz, care va fi divizata in 64 de diviziuni pentru a incapea pe 16 biti
@@ -22,13 +24,6 @@ void init_LED(void)
 
 int main(void)
 {
-	sei();
-	init_LED();
-	init_clock();
-	A2();
-    while (1) 
-    {
-    }
-	cli();
+	A4();
 }
 
