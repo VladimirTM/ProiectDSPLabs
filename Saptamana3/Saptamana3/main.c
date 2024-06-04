@@ -15,12 +15,12 @@ int main(void)
 	initADC();
     while (1) 
     {
-		uint32_t realValue;
+		uint32_t value;
 		uint16_t readValue;
 		char text[100];
 		readValue = readADC();
-		realValue = (readValue * 5000) / 1023;
-		sprintf(text, "%d mV\n", realValue);
+		value = (readValue * 5000) / 1023;
+		sprintf(text, "value %d\n", readValue);
 		sendString(text);
 		_delay_ms(1000);
     }
