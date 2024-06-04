@@ -3,18 +3,37 @@
 #include <avr/interrupt.h>
 #include <util/delay.h>
 #include <stdint.h>
+#include <string.h>
 #include "Serial.h"
 
+void A6(void)
+{
+		char text[100];
+		static int counter = 0;
+		sprintf(text, "Ana are %d mere ", counter);
+		counter++;
+		sendString(text);
+}
+
+void A8(void)
+{
+	uint8_t byte_read;
+	byte_read = UART_ReceiveByte();
+	sendCharacter(byte_read);
+}
 
 int main(void)
 {
-	DDRA = 0xFF;
-	PORTA = 0x01;
 	initUART();
+	sei();
     while (1) 
     {
-		sendCharacter('a');
-		_delay_ms(1000);
+		if(flag)
+		{
+			A8();
+			flag = 0;
+		}
     }
+	cli();
 }
 
