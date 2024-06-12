@@ -5,6 +5,7 @@
 #include <util/delay.h>
 #include <stdint.h>
 #include <string.h>
+#include <stdio.h>
 #include "Adc.h"
 #include "Serial.h"
 
@@ -16,13 +17,13 @@ int main(void)
     while (1) 
     {
 		uint32_t value;
-		uint16_t readValue;
+		uint32_t readValue;
 		char text[100];
 		readValue = readADC();
-		value = (readValue * 5000) / 1023;
-		sprintf(text, "value %d\n", readValue);
+		value = readValue * 5000 / 1023;
+		sprintf(text, "ADCvalue %d\n", value);
 		sendString(text);
-		_delay_ms(1000);
+		_delay_ms(100);
     }
 }
 
