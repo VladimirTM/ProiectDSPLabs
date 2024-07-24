@@ -235,7 +235,7 @@ PINSEL2_Val     EQU     0x0E6149E4      ; CS0..3, OE, WE, BLS0..3,
 ;  Mapped to Address 0.
 ;  Absolute addressing mode must be used.
 ;  Dummy Handlers are implemented as infinite loops which can be modified.
-
+		
 Vectors         LDR     PC, Reset_Addr         
                 LDR     PC, Undef_Addr
                 LDR     PC, SWI_Addr
@@ -260,7 +260,8 @@ SWI_Handler     B       SWI_Handler
 PAbt_Handler    B       PAbt_Handler
 DAbt_Handler    B       DAbt_Handler
 IRQ_Handler     B       IRQ_Handler
-FIQ_Handler     B       FIQ_Handler
+			IMPORT timer_irq
+FIQ_Handler     B       timer_irq
 
 
 ; Reset Handler

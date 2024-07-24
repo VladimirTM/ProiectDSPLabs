@@ -5,3 +5,4 @@
 .\objects\main.o: serial.h
 .\objects\main.o: i2c.h
 .\objects\main.o: mpu6050.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

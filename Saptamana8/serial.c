@@ -11,10 +11,11 @@ void initUART(void)
 	U0LCR = 0x03;
 }
 
-void sendCharacter(unsigned char ch)
+int sendCharacter(unsigned char ch)
 {
 	while((U0LSR & 0x20) == 0);
 	U0THR = ch;
+	return ch;
 }
 
 void sendString(char *string)
@@ -40,3 +41,4 @@ unsigned char getCharacter(void)
 	ch = U0RBR;
 	return ch;
 }
+

@@ -32,7 +32,7 @@ unsigned char readregister(char adresa)
 
 void initMPU6050(void)
 {
-	writeRegister(0x6B, 0x00); // Clock PLL y
+	writeRegister(0x6B, 0x00); // Clock intern
 	writeRegister(0x19, 0x07); // Data clock divider
 	writeRegister(0x1A, 0x00); // Configurare
 	writeRegister(0x1B, 0x00); // Configurare range giroscop

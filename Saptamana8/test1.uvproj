@@ -461,6 +461,11 @@
               <FileType>5</FileType>
               <FilePath>.\mpu6050.h</FilePath>
             </File>
+            <File>
+              <FileName>Retarget.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Retarget.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
