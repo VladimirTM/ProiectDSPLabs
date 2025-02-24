@@ -1,0 +1,123 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.27.1.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: a a, a, LIC=585DY-IE9GK-KNCAC-7SZXU-G09QF-XWNIH
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.27.1.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARM.DLL V5.27.1.0
+Dialog DLL:      DARMP.DLL V1.53.0.0
+Target DLL:      Segger\JLTAgdi.dll V1.61.0.0
+Dialog DLL:      TARMP.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+C:\Users\dspproject\Documents\Vladimir\Saptamana8\test1.uvproj
+Project File Date:  07/24/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Target 1'
+compiling main.c...
+serial.h(10): warning:  #1-D: last line of file ends without a newline
+  #endif
+i2c.h(11): warning:  #1-D: last line of file ends without a newline
+  #endif
+mpu6050.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+main.c(9): warning:  #77-D: this declaration has no storage class or type specifier
+  __fiq void timer_fiq()
+main.c(9): error:  #65: expected a ";"
+  __fiq void timer_fiq()
+main.c(76): warning:  #12-D: parsing restarts here after previous syntax error
+  		AY = (double)ay / 16384.0;
+main.c(77): warning:  #77-D: this declaration has no storage class or type specifier
+  		az = ((int16_t)(measurements[4]) << 8) | ((int16_t)(measurements[5]));
+main.c(77): error:  #20: identifier "measurements" is undefined
+  		az = ((int16_t)(measurements[4]) << 8) | ((int16_t)(measurements[5]));
+main.c(78): warning:  #77-D: this declaration has no storage class or type specifier
+  		AZ = (double)az / 16384.0;
+main.c(78): error:  #28: expression must have a constant value
+  		AZ = (double)az / 16384.0;
+main.c(80): warning:  #77-D: this declaration has no storage class or type specifier
+  		t = ((int16_t)(measurements[6]) << 8) | ((int16_t)(measurements[7]));
+main.c(81): warning:  #77-D: this declaration has no storage class or type specifier
+  		T = ((double)t / 340.0) + 36.53;
+main.c(81): error:  #28: expression must have a constant value
+  		T = ((double)t / 340.0) + 36.53;
+main.c(83): warning:  #77-D: this declaration has no storage class or type specifier
+  		gx = ((int16_t)(measurements[8]) << 8) | ((int16_t)(measurements[9]));
+main.c(84): warning:  #77-D: this declaration has no storage class or type specifier
+  		GX = (double)gx / 131.0;
+main.c(84): error:  #28: expression must have a constant value
+  		GX = (double)gx / 131.0;
+main.c(85): warning:  #77-D: this declaration has no storage class or type specifier
+  		gy = ((int16_t)(measurements[10]) << 8) | ((int16_t)(measurements[11]));
+main.c(86): warning:  #77-D: this declaration has no storage class or type specifier
+  		GY = (double)gy / 131.0;
+main.c(86): error:  #28: expression must have a constant value
+  		GY = (double)gy / 131.0;
+main.c(87): warning:  #77-D: this declaration has no storage class or type specifier
+  		gz = ((int16_t)(measurements[12]) << 8) | ((int16_t)(measurements[13]));
+main.c(88): warning:  #77-D: this declaration has no storage class or type specifier
+  		GZ = (double)gz / 131.0;
+main.c(88): error:  #28: expression must have a constant value
+  		GZ = (double)gz / 131.0;
+main.c(90): error:  #79: expected a type specifier
+  		printf("Acclerometru : %f %f %f\n", AX, AY, AZ);
+main.c(90): error:  #20: identifier "AX" is undefined
+  		printf("Acclerometru : %f %f %f\n", AX, AY, AZ);
+main.c(90): error:  #20: identifier "AY" is undefined
+  		printf("Acclerometru : %f %f %f\n", AX, AY, AZ);
+main.c(90): error:  #757: variable "AZ"  is not a type name
+  		printf("Acclerometru : %f %f %f\n", AX, AY, AZ);
+main.c(90): warning:  #77-D: this declaration has no storage class or type specifier
+  		printf("Acclerometru : %f %f %f\n", AX, AY, AZ);
+main.c(90): error:  #147-D: declaration is incompatible with "int printf(const char *__restrict__, ...)"  (declared at line 402 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h")
+  		printf("Acclerometru : %f %f %f\n", AX, AY, AZ);
+main.c(91): error:  #79: expected a type specifier
+  		printf("Temperatura : %f\n", T);
+main.c(91): error:  #757: variable "T"  is not a type name
+  		printf("Temperatura : %f\n", T);
+main.c(91): warning:  #77-D: this declaration has no storage class or type specifier
+  		printf("Temperatura : %f\n", T);
+main.c(91): error:  #147-D: declaration is incompatible with "int printf(<error-type>, <error-type>, <error-type>, <error-type>)"  (declared at line 402 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h")
+  		printf("Temperatura : %f\n", T);
+main.c(92): error:  #79: expected a type specifier
+  		printf("Giroscop : %f %f %f\n\n", GX, GY, GZ);
+main.c(92): error:  #757: variable "GX"  is not a type name
+  		printf("Giroscop : %f %f %f\n\n", GX, GY, GZ);
+main.c(92): error:  #757: variable "GY"  is not a type name
+  		printf("Giroscop : %f %f %f\n\n", GX, GY, GZ);
+main.c(92): error:  #757: variable "GZ"  is not a type name
+  		printf("Giroscop : %f %f %f\n\n", GX, GY, GZ);
+main.c(92): warning:  #77-D: this declaration has no storage class or type specifier
+  		printf("Giroscop : %f %f %f\n\n", GX, GY, GZ);
+main.c(92): error:  #147-D: declaration is incompatible with "int printf(<error-type>, <error-type>)"  (declared at line 402 of "C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h")
+  		printf("Giroscop : %f %f %f\n\n", GX, GY, GZ);
+main.c(93): warning:  #1295-D: Deprecated declaration delay - give arg types
+  		delay();
+main.c(93): warning:  #77-D: this declaration has no storage class or type specifier
+  		delay();
+main.c(94): error:  #169: expected a declaration
+  	}
+main.c(96): warning:  #1-D: last line of file ends without a newline
+  }
+main.c(96): error:  #169: expected a declaration
+  }
+main.c: 21 warnings, 22 errors
+".\Objects\test1.axf" - 22 Error(s), 21 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
