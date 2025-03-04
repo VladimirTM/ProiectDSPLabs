@@ -1,0 +1,3 @@
+/home/dspproject/1/lpc2000-demo-projects/FreeRTOS-LPC2000/cmake-build-debug/CMakeFiles/FreeRTOS-LPC2000.elf.dir
+/home/dspproject/1/lpc2000-demo-projects/FreeRTOS-LPC2000/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/dspproject/1/lpc2000-demo-projects/FreeRTOS-LPC2000/cmake-build-debug/CMakeFiles/rebuild_cache.dir
