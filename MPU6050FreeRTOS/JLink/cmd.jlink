@@ -1,0 +1,12 @@
+log mylog.log
+device lpc2294
+if JTAG
+speed 1000
+jtagconf -1,-1
+RSetType 4
+connect
+Loadfile out/FreeRTOS-LPC2000.elf
+reset
+Exit
+
+

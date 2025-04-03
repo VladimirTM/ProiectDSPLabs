@@ -1,0 +1,3 @@
+/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/cmake-build-debug/CMakeFiles/FreeRTOS-LPC2000.elf.dir
+/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
