@@ -6,7 +6,22 @@ This project is a structured development of drivers for the MPU6050 sensor, targ
 
 ##  Project Structure
 
-![Image](https://github.com/user-attachments/assets/2522d08e-bb0c-4e6a-8b05-8b76c07a45cd)
+```
+├── Development 
+|
+├── MPU6050 Driver 
+|   |
+|   ├── MPU6050Blocking [LPC2148] 
+|   |
+|   ├── MPU6050NonBlocking [LPC2294] 
+|   | 
+|   └── MPU6050FreeRTOS [LPC2294] 
+|
+└── WhoAmITest 
+    ├── WhoAmITest (Blocking) [LPC2148] 
+    ├── WhoAmITest (NonBlocking) [LPC2148] 
+    └── WhoAmITest (FreeRTOS) [LPC2294] 
+``` 
 
 ---
 
