@@ -1,55 +1,75 @@
-# **Project Description**
-This project involves creating a driver to interface with the **MPU6050** sensor, which reads accelerometer, gyroscope, and temperature data. The data is transmitted to a PC terminal via UART0 of the LPC2148 microcontroller.
+# MPU6050 Driver Development for LPC Microcontrollers
 
-## **Status**: This project is currently under development. At this stage:
+This project is a structured development of drivers for the MPU6050 sensor, targeting various LPC architectures and driver models (Blocking, Non-Blocking, FreeRTOS).
 
-* The driver is implemented in **blocking form**.
-* We have configured the **WhoAmI** register with **interrupts**.
-* The driver in **Final State Machine form** for Real-Time usage is planned but not yet completed.
+---
 
-## **Features**
-* Real-time data acquisition from the MPU6050 sensor.
-* Outputs accelerometer, gyroscope, and temperature data to a PC terminal.
-* Configurable UART communication for data transmission.
-* Compatibility with LPC2148 microcontroller.
-* Debugging support via Digital Logic Analyzer (recommended: Saleae Logic Pro 16).
+##  Project Structure
 
-## **Getting Started**
+![Image](https://github.com/user-attachments/assets/2522d08e-bb0c-4e6a-8b05-8b76c07a45cd)
 
-**Prerequisites**
-* LPC2148 microcontroller.
-* MPU6050 sensor module.
-* Digital Logic Analyzer (optional for debugging).
-* Development environment supporting ARM LPC2148 (e.g., Keil uVision, or any other ARM-compatible IDE).
-  
-**Documentation**
-For detailed information on hardware and firmware configuration, please consult:
-* LPC2141/42/44/46/48 datasheet
-* UM10139 LPC214x User manual
-* lpc-ARM-book_srn
+---
 
-**Usage**
-Power on the LPC2148 board with the MPU6050 connected (don't forget about the pullup resistors)
-Open your terminal software and connect to the appropriate COM port at the configured baud rate (e.g., 9600 baud).
-Start the program to begin data transmission from the MPU6050. Data will display in real-time on the terminal.
+##  Project Overview
 
-**Debugging**
-Using a Digital Logic Analyzer is recommended for debugging. We used the Saleae Logic Pro 16, which helped us capture and analyze I2C signals for effective troubleshooting.
+The project includes MPU6050 sensor drivers implemented and tested using three different approaches:
 
-## **Authors**
-This project was developed under the guidance of Valentin Stangaciu at DspLabs.
+- **Blocking** — Simple implementation for LPC2148.
+- **Non-Blocking** — Avoids CPU stalling, using LPC2294 for better performance.
+- **FreeRTOS** — Multi-tasking support under FreeRTOS for LPC2294.
 
-Project Authors:
+---
 
-* Ghimpau Mihai-Vladimir
-* Sztanarec Adrian-Gabriel
+## Features
 
-## **Acknowledgments**
+- Real-time data acquisition from the MPU6050 sensor.
+- Outputs accelerometer, gyroscope, and temperature data to a PC terminal.
+- Configurable UART communication.
+- Compatible with LPC2148 and LPC2294 microcontrollers.
+- Debugging support using Digital Logic Analyzer (recommended: Saleae Logic Pro 16).
 
-DspLabs for providing resources and guidance.
+---
 
-Valentin Stangaciu for mentorship throughout the project.
+##  Getting Started
 
-## **Contact**
-For inquiries, please reach out via GitHub.
+### Prerequisites
+
+- LPC2148 or LPC2294 microcontroller
+- MPU6050 sensor module
+- Serial terminal 
+- Digital Logic Analyzer (optional, for debugging)
+- IDE supporting ARM LPC (e.g., Keil uVision, CLion)
+
+---
+
+##  Documentation
+
+Refer to the following documents for deeper hardware and firmware understanding:
+
+- LPC2148/2294 datasheet
+- UM10139 LPC214x User Manual
+- lpc-ARM-book_srn
+
+---
+
+## Usage
+
+Clone the repo:
+
+```bash
+git clone https://github.com/VladimirTM/ProiectDSPLabs.git
+```
+
+### Steps:
+
+    
+- Open the desired project folder in your IDE.
+
+- Power on the LPC2148/2294 board with the MPU6050 connected.
+
+- Ensure pull-up resistors are in place.
+
+- Open your terminal and connect to the correct COM port (e.g., 115200 baud).
+
+- Start the program to begin real-time data output.
 
