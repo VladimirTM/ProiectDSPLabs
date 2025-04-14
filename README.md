@@ -13,7 +13,7 @@ This project is a structured development of drivers for the MPU6050 sensor, targ
 |   |
 |   ├── MPU6050Blocking [LPC2148] 
 |   |
-|   ├── MPU6050NonBlocking [LPC2294] 
+|   ├── MPU6050NonBlocking [LPC2148] 
 |   | 
 |   └── MPU6050FreeRTOS [LPC2294] 
 |
