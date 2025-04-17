@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/out/FreeRTOS-LPC2000.elf"
+			"path" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/out/FreeRTOS-LPC2000.elf"
 		}
 	],
 	"backtrace" : 1,
@@ -202,27 +202,27 @@
 			[
 				{
 					"backtrace" : 15,
-					"path" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/FreeRTOS"
+					"path" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/FreeRTOS"
 				},
 				{
 					"backtrace" : 15,
-					"path" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/LinkerScript"
+					"path" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/LinkerScript"
 				},
 				{
 					"backtrace" : 15,
-					"path" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/cpu"
+					"path" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/cpu"
 				},
 				{
 					"backtrace" : 15,
-					"path" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/src"
+					"path" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/src"
 				},
 				{
 					"backtrace" : 15,
-					"path" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/log"
+					"path" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/log"
 				},
 				{
 					"backtrace" : 15,
-					"path" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/includes"
+					"path" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/includes"
 				}
 			],
 			"language" : "C",
@@ -334,27 +334,27 @@
 			[
 				{
 					"backtrace" : 15,
-					"path" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/FreeRTOS"
+					"path" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/FreeRTOS"
 				},
 				{
 					"backtrace" : 15,
-					"path" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/LinkerScript"
+					"path" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/LinkerScript"
 				},
 				{
 					"backtrace" : 15,
-					"path" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/cpu"
+					"path" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/cpu"
 				},
 				{
 					"backtrace" : 15,
-					"path" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/src"
+					"path" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/src"
 				},
 				{
 					"backtrace" : 15,
-					"path" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/log"
+					"path" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/log"
 				},
 				{
 					"backtrace" : 15,
-					"path" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/includes"
+					"path" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/includes"
 				}
 			],
 			"language" : "ASM",
@@ -379,7 +379,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-Wl,-gc-sections,--print-memory-usage,-Map=/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/cmake-build-debug/FreeRTOS-LPC2000.map",
+				"fragment" : "-Wl,-gc-sections,--print-memory-usage,-Map=/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/cmake-build-debug/FreeRTOS-LPC2000.map",
 				"role" : "flags"
 			},
 			{
@@ -419,7 +419,7 @@
 			},
 			{
 				"backtrace" : 6,
-				"fragment" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/LinkerScript/LPC2294_flash.ld",
+				"fragment" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/LinkerScript/LPC2294_flash.ld",
 				"role" : "flags"
 			}
 		],

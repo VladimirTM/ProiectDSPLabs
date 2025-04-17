@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/out/FreeRTOS-LPC2000.elf"
-  "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/out/FreeRTOS-LPC2000.elf.pdb"
+  "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/out/FreeRTOS-LPC2000.elf"
+  "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/out/FreeRTOS-LPC2000.elf.pdb"
   "CMakeFiles/FreeRTOS-LPC2000.elf.dir/FreeRTOS/croutine.c.obj"
   "CMakeFiles/FreeRTOS-LPC2000.elf.dir/FreeRTOS/croutine.c.obj.d"
   "CMakeFiles/FreeRTOS-LPC2000.elf.dir/FreeRTOS/event_groups.c.obj"

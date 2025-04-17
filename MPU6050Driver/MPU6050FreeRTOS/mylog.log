@@ -1,196 +1,201 @@
-T56AC9740 000:032.325   SEGGER J-Link V8.10h Log File
-T56AC9740 000:032.420   DLL Compiled: Nov 20 2024 12:20:16
-T56AC9740 000:032.423   Logging started @ 2025-04-03 12:38
-T56AC9740 000:032.426   Process: /opt/SEGGER/JLink_V810h/JLinkExe
-T56AC9740 000:032.429 - 32.428ms 
-T56AC9740 000:032.448 JLINK_TIF_GetAvailable(...)
-T56AC9740 000:034.673 - 2.225ms 
-T56AC9740 000:034.703 JLINK_ConfigJTAG(IRPre = -1, DRPre = -1)
-T56AC9740 000:034.706 - 0.005ms 
-T56AC9740 000:034.712 JLINK_DEVICE_GetIndex(sDeviceName = lpc2294)
-T56AC9740 000:047.073 - 12.360ms returns 5206
-T56AC9740 000:047.092 JLINK_ExecCommand("device=lpc2294", ...). 
-T56AC9740 000:048.457   Add. flash bank: Turbo mode enabled, but no RAMCode available. 
-T56AC9740 000:048.589   Device "LPC2294" selected.
-T56AC9740 000:049.970 - 2.875ms returns 0x00
-T56AC9740 000:049.977 JLINK_EnableLog(...)
-T56AC9740 000:049.978 - 0.002ms 
-T56AC9740 000:049.984 JLINK_GetEmuCaps()
-T56AC9740 000:049.987 - 0.002ms returns 0xB9FF7BBF
-T56AC9740 000:049.988 JLINK_TIF_GetAvailable(...)
-T56AC9740 000:050.100 - 0.111ms 
-T56AC9740 000:050.103 JLINK_TIF_Select(JLINKARM_TIF_JTAG)
-T56AC9740 000:051.119 - 1.017ms returns 0x00
-T56AC9740 000:051.125 JLINK_IsConnected()
-T56AC9740 000:051.127 - 0.002ms returns FALSE
-T56AC9740 000:051.129 JLINK_SetSpeed(1000)
-T56AC9740 000:051.268 - 0.139ms 
-T56AC9740 000:051.271 JLINK_Connect()
-T56AC9740 000:052.847   TotalIRLen = 4, IRPrint = 0x01
-T56AC9740 000:053.187   JTAG chain detection found 1 devices:
-T56AC9740 000:053.197    #0 Id: 0x4F1F0F0F, IRLen: 04, ARM7TDMI-S Core
-T56AC9740 000:053.747   -- Max. mem block: 0x00004598
-T56AC9740 000:053.798 - 2.527ms returns 0x00
-T56AC9740 000:053.811 JLINK_GetIdData(pIdData)
-T56AC9740 000:055.350   pIdData->ScanLen=4
-T56AC9740 000:055.366   pIdData->NumDevices=1
-T56AC9740 000:055.369   pIdData->aId[0]=0x4F1F0F0F
-T56AC9740 000:055.372   pIdData->aIrRead[0]=0
-T56AC9740 000:055.375   pIdData->aScanLen[0]=4
-T56AC9740 000:055.378   pIdData->aScanRead[0]=0
-T56AC9740 000:055.382 - 1.570ms 
-T56AC9740 000:055.388 JLINK_GetMemZones(...)
-T56AC9740 000:055.390 - 0.003ms returns 1
-T56AC9740 000:055.404 JLINK_HasError()
-T56AC9740 000:055.409 JLINK_CORE_GetFound()
-T56AC9740 000:055.411 - 0.002ms returns 0x7FFFFFF
-T56AC9740 000:055.422 JLINK_ETM_IsPresent()
-T56AC9740 000:058.874 - 3.451ms returns 18:TRUE
-T56AC9740 000:058.900 JLINK_ETM_IsPresent()
-T56AC9740 000:058.904 - 0.003ms returns 18:TRUE
-T56AC9740 000:058.954 JLINK_ETM_ReadReg(RegIndex = 0x01)
-T56AC9740 000:058.972    -- Skipped
-T56AC9740 000:058.975 - 0.022ms returns 0x20842401
-T56AC9740 000:058.990 JLINK_ETB_IsPresent()
-T56AC9740 000:058.994 - 0.004ms returns 0:FALSE
-T56AC9740 000:059.009 JLINK_SetResetType(JLINKARM_RESET_TYPE_HALT_WP)
-T56AC9740 000:059.013 - 0.004ms returns JLINKARM_RESET_TYPE_LPC
-T56AC9740 000:059.020 JLINK_GetResetTypeDesc
-T56AC9740 000:059.024 - 0.003ms 
-T56AC9740 000:059.044 JLINK_ConfigJTAG(IRPre = -1, DRPre = -1)
-T56AC9740 000:059.046 - 0.002ms 
-T56AC9740 000:059.050 JLINK_DEVICE_GetIndex(sDeviceName = lpc2294)
-T56AC9740 000:059.312 - 0.262ms returns 5206
-T56AC9740 000:059.318 JLINK_ExecCommand("device=lpc2294", ...). 
-T56AC9740 000:059.429   Add. flash bank: Turbo mode enabled, but no RAMCode available. 
-T56AC9740 000:059.460   Device "LPC2294" selected.
-T56AC9740 000:059.572 - 0.252ms returns 0x00
-T56AC9740 000:059.575 JLINK_EnableLog(...)
-T56AC9740 000:059.576 - 0.001ms 
-T56AC9740 000:059.582 JLINK_GetEmuCaps()
-T56AC9740 000:059.594 - 0.012ms returns 0xB9FF7BBF
-T56AC9740 000:059.596 JLINK_TIF_GetAvailable(...)
-T56AC9740 000:059.695 - 0.098ms 
-T56AC9740 000:059.698 JLINK_TIF_Select(JLINKARM_TIF_JTAG)
-T56AC9740 000:059.700 - 0.002ms returns 0x00
-T56AC9740 000:059.705 JLINK_IsConnected()
-T56AC9740 000:059.708 - 0.003ms returns TRUE
-T56AC9740 000:059.712 JLINK_SetSpeed(1000)
-T56AC9740 000:059.760 - 0.049ms 
-T56AC9740 000:059.763 JLINK_Connect()
-T56AC9740 000:061.578   TotalIRLen = 4, IRPrint = 0x01
-T56AC9740 000:062.065   JTAG chain detection found 1 devices:
-T56AC9740 000:062.072    #0 Id: 0x4F1F0F0F, IRLen: 04, ARM7TDMI-S Core
-T56AC9740 000:062.742   -- Max. mem block: 0x00004598
-T56AC9740 000:062.747 - 2.984ms returns 0x00
-T56AC9740 000:062.749 JLINK_GetIdData(pIdData)
-T56AC9740 000:064.226   pIdData->ScanLen=4
-T56AC9740 000:064.238   pIdData->NumDevices=1
-T56AC9740 000:064.248   pIdData->aId[0]=0x4F1F0F0F
-T56AC9740 000:064.257   pIdData->aIrRead[0]=0
-T56AC9740 000:064.267   pIdData->aScanLen[0]=4
-T56AC9740 000:064.276   pIdData->aScanRead[0]=0
-T56AC9740 000:064.286 - 1.536ms 
-T56AC9740 000:064.291 JLINK_GetMemZones(...)
-T56AC9740 000:064.293 - 0.002ms returns 1
-T56AC9740 000:064.297 JLINK_HasError()
-T56AC9740 000:064.299 JLINK_CORE_GetFound()
-T56AC9740 000:064.301 - 0.001ms returns 0x7FFFFFF
-T56AC9740 000:064.305 JLINK_ETM_IsPresent()
-T56AC9740 000:067.601 - 3.296ms returns 18:TRUE
-T56AC9740 000:067.603 JLINK_ETM_IsPresent()
-T56AC9740 000:067.605 - 0.001ms returns 18:TRUE
-T56AC9740 000:067.606 JLINK_ETM_ReadReg(RegIndex = 0x01)
-T56AC9740 000:067.608    -- Skipped
-T56AC9740 000:067.610 - 0.004ms returns 0x20842401
-T56AC9740 000:067.613 JLINK_ETB_IsPresent()
-T56AC9740 000:067.615 - 0.002ms returns 0:FALSE
-T56AC9740 000:067.627 JLINK_Reset()
-T56AC9740 000:067.634   JLINK_GetResetTypeDesc
-T56AC9740 000:067.635   - 0.001ms 
-T56AC9740 000:067.640   Reset type: HALT_WP (https://wiki.segger.com/J-Link_Reset_Strategies)
-T56AC9740 000:067.641   _ResetHaltWP: 
-T56AC9740 000:092.885   Resetting TRST
-T56AC9740 000:116.255 - 48.626ms 
-T56AC9740 000:116.276 JLINK_Halt()
-T56AC9740 000:116.278 - 0.002ms returns 0x00
-T56AC9740 000:116.304 JLINK_ExecCommand("SetVerifyRAMDownload = 1", ...). 
-T56AC9740 000:116.308 - 0.001ms returns 0x00
-T56AC9740 000:116.311 JLINK_DownloadFile()
-T56AC9740 000:116.580   Data:  12 00 00 EA 14 F0 9F E5 14 F0 9F E5 14 F0 9F E5 ...
-T56AC9740 000:117.105    -- ReadRemote(4 bytes @ 0xE01FC040)
-T56AC9740 000:118.164    -- Need to split memory access
-T56AC9740 000:118.177    -- #0: 0x00000000, 0x00000040 bytes
-T56AC9740 000:118.193   completely In flash
-T56AC9740 000:118.200    -- #1: 0x00000040, 0x0000E4E4 bytes
-T56AC9740 000:118.203   completely In flash
-T56AC9740 000:118.211   Data:  00 48 2D E9 04 B0 8D E2 70 D0 4D E2 1C 34 9F E5 ...
-T56AC9740 000:118.214   completely In flash
-T56AC9740 000:118.218   Data:  6B 00 19 07 1A 00 1B 00 1C 00 23 00 24 00 37 00 ...
-T56AC9740 000:118.221   completely In flash
-T56AC9740 000:118.369    -- --------------------------------------
-T56AC9740 000:118.374    -- Flash bank @ 0x00000000: Default: L2 verify disabled because algorithm performs L1 verify
-T56AC9740 000:118.377    -- Start of determining dirty areas in flash cache
-T56AC9740 000:118.382    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000000 if necessary
-T56AC9740 000:118.385    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002000 if necessary
-T56AC9740 000:118.387    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004000 if necessary
-T56AC9740 000:118.390    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006000 if necessary
-T56AC9740 000:118.393    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00008000 if necessary
-T56AC9740 000:118.395    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x0000A000 if necessary
-T56AC9740 000:118.398    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x0000C000 if necessary
-T56AC9740 000:118.400    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x0000E000 if necessary
-T56AC9740 000:118.436    -- End of determining dirty areas
-T56AC9740 000:118.439    -- Start of preparing flash programming
-T56AC9740 000:118.442    -- Calculating RAM usage
-T56AC9740 000:118.450    -- RAM usage = 8672 Bytes
-T56AC9740 000:118.452    -- Preserving CPU registers
-T56AC9740 000:118.460    -- Determining CPU clock frequency
-T56AC9740 000:129.060    -- Preparing target
-T56AC9740 000:131.346    -- Preserving target RAM temporarily used for programming
-T56AC9740 000:282.191    -- Preserving additional used target memory
-T56AC9740 000:283.450    -- Downloading RAMCode
-T56AC9740 000:307.400    -- Preparing RAMCode
-T56AC9740 000:315.175    -- CPU frequency = 15216 kHz
-T56AC9740 000:315.199    -- End of preparing flash programming
-T56AC9740 000:332.651    -- CPU is running at 15216 kHz.
-T56AC9740 000:332.672    -- Start of comparing flash
-T56AC9740 000:332.676    -- CRC check was estimated as fastest method
-T56AC9740 000:334.802    -- Comparing range 0x0000 - 0xFFFF (8 Sectors, 64 KB), using multi-block CRC calculation
-T56AC9740 000:452.441    -- CRC does not match for sector 0
-T56AC9740 000:455.336    -- Comparing range 0x2000 - 0xFFFF (7 Sectors, 56 KB), using alternative multi-block CRC calculation
-T56AC9740 000:559.774    -- All CRCs match
-T56AC9740 000:559.900    -- End of comparing flash
-T56AC9740 000:559.920    -- Start of erasing sectors
-T56AC9740 000:559.942    -- Erasing range 0x00000000 - 0x00001FFF (  1 Sector, 8 KB)
-T56AC9740 000:686.669    -- End of erasing sectors
-T56AC9740 000:686.703    -- Start of flash programming
-T56AC9740 000:686.707    -- Programming range 0x00000000 - 0x00001FFF (  1 Sector, 8 KB)
-T56AC9740 000:911.232    -- End of flash programming
-T56AC9740 000:911.303    -- 0x0000 - 0x1FFF (  1 Sector, 8 KB)
-T56AC9740 000:911.319    -- Start of restoring
-T56AC9740 000:911.332    -- Restoring RAMCode
-T56AC9740 000:917.849    -- Restoring target memory
-T56AC9740 001:041.713    -- Restore target
-T56AC9740 001:042.934    -- Restoring CPU registers
-T56AC9740 001:042.972    -- End of restoring
-T56AC9740 001:043.010    -- Bank 0 @ 0x00000000: 1 range affected (8192 bytes)
-T56AC9740 001:043.032    -- Total: 0.924s (Prepare: 0.214s, Compare: 0.227s, Erase: 0.126s, Program & Verify: 0.224s, Restore: 0.131s)
-T56AC9740 001:043.050    -- Program & Verify speed: 35 KB/s
-T56AC9740 001:043.703 - 927.388ms returns 0x00
-T56AC9740 001:043.752 JLINK_ExecCommand("SetVerifyRAMDownload = 0", ...). 
-T56AC9740 001:043.776 - 0.006ms returns 0x01
-T56AC9740 001:043.859 JLINK_SetResetDelay(0)
-T56AC9740 001:043.891 - 0.032ms 
-T56AC9740 001:043.906 JLINK_Reset()
-T56AC9740 001:043.928   JLINK_GetResetTypeDesc
-T56AC9740 001:043.940   - 0.012ms 
-T56AC9740 001:043.962   Reset type: HALT_WP (https://wiki.segger.com/J-Link_Reset_Strategies)
-T56AC9740 001:043.973   _ResetHaltWP: 
-T56AC9740 001:070.045   Resetting TRST
-T56AC9740 001:093.241 - 49.332ms 
-T56AC9740 001:093.544 JLINK_IsOpen()
-T56AC9740 001:093.559 - 0.016ms returns 0x01
-T56AC9740 001:094.558 JLINK_Close()
-T56AC9740 001:112.388 - 17.827ms
-T56AC9740 001:112.446   
-T56AC9740 001:112.452   Closed
+T8D285740 000:031.225   SEGGER J-Link V8.10h Log File
+T8D285740 000:031.367   DLL Compiled: Nov 20 2024 12:20:16
+T8D285740 000:031.369   Logging started @ 2025-04-17 09:38
+T8D285740 000:031.372   Process: /opt/SEGGER/JLink_V810h/JLinkExe
+T8D285740 000:031.375 - 31.374ms 
+T8D285740 000:031.417 JLINK_TIF_GetAvailable(...)
+T8D285740 000:034.582 - 3.163ms 
+T8D285740 000:034.646 JLINK_ConfigJTAG(IRPre = -1, DRPre = -1)
+T8D285740 000:034.649 - 0.008ms 
+T8D285740 000:034.661 JLINK_DEVICE_GetIndex(sDeviceName = lpc2294)
+T8D285740 000:049.285 - 14.623ms returns 5206
+T8D285740 000:049.312 JLINK_ExecCommand("device=lpc2294", ...). 
+T8D285740 000:050.731   Add. flash bank: Turbo mode enabled, but no RAMCode available. 
+T8D285740 000:050.839   Device "LPC2294" selected.
+T8D285740 000:052.371 - 3.057ms returns 0x00
+T8D285740 000:052.380 JLINK_EnableLog(...)
+T8D285740 000:052.381 - 0.002ms 
+T8D285740 000:052.389 JLINK_GetEmuCaps()
+T8D285740 000:052.392 - 0.003ms returns 0xB9FF7BBF
+T8D285740 000:052.394 JLINK_TIF_GetAvailable(...)
+T8D285740 000:052.508 - 0.114ms 
+T8D285740 000:052.513 JLINK_TIF_Select(JLINKARM_TIF_JTAG)
+T8D285740 000:053.566 - 1.054ms returns 0x00
+T8D285740 000:053.575 JLINK_IsConnected()
+T8D285740 000:053.576 - 0.002ms returns FALSE
+T8D285740 000:053.579 JLINK_SetSpeed(1000)
+T8D285740 000:053.714 - 0.135ms 
+T8D285740 000:053.717 JLINK_Connect()
+T8D285740 000:055.254   TotalIRLen = 4, IRPrint = 0x01
+T8D285740 000:055.646   JTAG chain detection found 1 devices:
+T8D285740 000:055.651    #0 Id: 0x4F1F0F0F, IRLen: 04, ARM7TDMI-S Core
+T8D285740 000:056.073   -- Max. mem block: 0x00004598
+T8D285740 000:056.101 - 2.385ms returns 0x00
+T8D285740 000:056.128 JLINK_GetIdData(pIdData)
+T8D285740 000:057.167   pIdData->ScanLen=4
+T8D285740 000:057.172   pIdData->NumDevices=1
+T8D285740 000:057.174   pIdData->aId[0]=0x4F1F0F0F
+T8D285740 000:057.176   pIdData->aIrRead[0]=0
+T8D285740 000:057.182   pIdData->aScanLen[0]=4
+T8D285740 000:057.183   pIdData->aScanRead[0]=0
+T8D285740 000:057.186 - 1.057ms 
+T8D285740 000:057.200 JLINK_GetMemZones(...)
+T8D285740 000:057.210 - 0.009ms returns 1
+T8D285740 000:057.224 JLINK_HasError()
+T8D285740 000:057.228 JLINK_CORE_GetFound()
+T8D285740 000:057.230 - 0.003ms returns 0x7FFFFFF
+T8D285740 000:057.237 JLINK_ETM_IsPresent()
+T8D285740 000:060.291 - 3.054ms returns 18:TRUE
+T8D285740 000:060.300 JLINK_ETM_IsPresent()
+T8D285740 000:060.301 - 0.001ms returns 18:TRUE
+T8D285740 000:060.305 JLINK_ETM_ReadReg(RegIndex = 0x01)
+T8D285740 000:060.306    -- Skipped
+T8D285740 000:060.309 - 0.005ms returns 0x20842401
+T8D285740 000:060.319 JLINK_ETB_IsPresent()
+T8D285740 000:060.322 - 0.003ms returns 0:FALSE
+T8D285740 000:060.331 JLINK_SetResetType(JLINKARM_RESET_TYPE_HALT_WP)
+T8D285740 000:060.334 - 0.003ms returns JLINKARM_RESET_TYPE_LPC
+T8D285740 000:060.337 JLINK_GetResetTypeDesc
+T8D285740 000:060.339 - 0.003ms 
+T8D285740 000:060.361 JLINK_ConfigJTAG(IRPre = -1, DRPre = -1)
+T8D285740 000:060.362 - 0.002ms 
+T8D285740 000:060.366 JLINK_DEVICE_GetIndex(sDeviceName = lpc2294)
+T8D285740 000:060.621 - 0.255ms returns 5206
+T8D285740 000:060.630 JLINK_ExecCommand("device=lpc2294", ...). 
+T8D285740 000:060.763   Add. flash bank: Turbo mode enabled, but no RAMCode available. 
+T8D285740 000:060.798   Device "LPC2294" selected.
+T8D285740 000:061.115 - 0.482ms returns 0x00
+T8D285740 000:061.119 JLINK_EnableLog(...)
+T8D285740 000:061.120 - 0.001ms 
+T8D285740 000:061.127 JLINK_GetEmuCaps()
+T8D285740 000:061.130 - 0.002ms returns 0xB9FF7BBF
+T8D285740 000:061.134 JLINK_TIF_GetAvailable(...)
+T8D285740 000:061.241 - 0.108ms 
+T8D285740 000:061.243 JLINK_TIF_Select(JLINKARM_TIF_JTAG)
+T8D285740 000:061.245 - 0.002ms returns 0x00
+T8D285740 000:061.250 JLINK_IsConnected()
+T8D285740 000:061.251 - 0.002ms returns TRUE
+T8D285740 000:061.253 JLINK_SetSpeed(1000)
+T8D285740 000:061.305 - 0.051ms 
+T8D285740 000:061.307 JLINK_Connect()
+T8D285740 000:062.887   TotalIRLen = 4, IRPrint = 0x01
+T8D285740 000:063.278   JTAG chain detection found 1 devices:
+T8D285740 000:063.299    #0 Id: 0x4F1F0F0F, IRLen: 04, ARM7TDMI-S Core
+T8D285740 000:063.692   -- Max. mem block: 0x00004598
+T8D285740 000:063.707 - 2.401ms returns 0x00
+T8D285740 000:063.712 JLINK_GetIdData(pIdData)
+T8D285740 000:064.789   pIdData->ScanLen=4
+T8D285740 000:064.797   pIdData->NumDevices=1
+T8D285740 000:064.800   pIdData->aId[0]=0x4F1F0F0F
+T8D285740 000:064.804   pIdData->aIrRead[0]=0
+T8D285740 000:064.807   pIdData->aScanLen[0]=4
+T8D285740 000:064.810   pIdData->aScanRead[0]=0
+T8D285740 000:064.814 - 1.103ms 
+T8D285740 000:064.817 JLINK_GetMemZones(...)
+T8D285740 000:064.820 - 0.003ms returns 1
+T8D285740 000:064.828 JLINK_HasError()
+T8D285740 000:064.831 JLINK_CORE_GetFound()
+T8D285740 000:064.834 - 0.003ms returns 0x7FFFFFF
+T8D285740 000:064.841 JLINK_ETM_IsPresent()
+T8D285740 000:067.926 - 3.083ms returns 18:TRUE
+T8D285740 000:067.973 JLINK_ETM_IsPresent()
+T8D285740 000:067.978 - 0.006ms returns 18:TRUE
+T8D285740 000:067.981 JLINK_ETM_ReadReg(RegIndex = 0x01)
+T8D285740 000:067.984    -- Skipped
+T8D285740 000:067.989 - 0.007ms returns 0x20842401
+T8D285740 000:068.005 JLINK_ETB_IsPresent()
+T8D285740 000:068.010 - 0.004ms returns 0:FALSE
+T8D285740 000:068.041 JLINK_Reset()
+T8D285740 000:068.061   JLINK_GetResetTypeDesc
+T8D285740 000:068.065   - 0.004ms 
+T8D285740 000:068.072   Reset type: HALT_WP (https://wiki.segger.com/J-Link_Reset_Strategies)
+T8D285740 000:068.077   _ResetHaltWP: 
+T8D285740 000:092.987   Resetting TRST
+T8D285740 000:116.603 - 48.561ms 
+T8D285740 000:116.629 JLINK_Halt()
+T8D285740 000:116.633 - 0.003ms returns 0x00
+T8D285740 000:116.661 JLINK_ExecCommand("SetVerifyRAMDownload = 1", ...). 
+T8D285740 000:116.668 - 0.001ms returns 0x00
+T8D285740 000:116.672 JLINK_DownloadFile()
+T8D285740 000:117.000   Data:  12 00 00 EA 14 F0 9F E5 14 F0 9F E5 14 F0 9F E5 ...
+T8D285740 000:117.555    -- ReadRemote(4 bytes @ 0xE01FC040)
+T8D285740 000:118.494    -- Need to split memory access
+T8D285740 000:118.501    -- #0: 0x00000000, 0x00000040 bytes
+T8D285740 000:118.506   completely In flash
+T8D285740 000:118.510    -- #1: 0x00000040, 0x0000E504 bytes
+T8D285740 000:118.513   completely In flash
+T8D285740 000:118.523   Data:  00 48 2D E9 04 B0 8D E2 78 D0 4D E2 78 00 0B E5 ...
+T8D285740 000:118.528   completely In flash
+T8D285740 000:118.533   Data:  6B 00 19 07 1A 00 1B 00 1C 00 23 00 24 00 37 00 ...
+T8D285740 000:118.537   completely In flash
+T8D285740 000:118.687    -- --------------------------------------
+T8D285740 000:118.697    -- Flash bank @ 0x00000000: Default: L2 verify disabled because algorithm performs L1 verify
+T8D285740 000:118.702    -- Start of determining dirty areas in flash cache
+T8D285740 000:118.710    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00000000 if necessary
+T8D285740 000:118.714    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00002000 if necessary
+T8D285740 000:118.718    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00004000 if necessary
+T8D285740 000:118.722    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00006000 if necessary
+T8D285740 000:118.726    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x00008000 if necessary
+T8D285740 000:118.730    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x0000A000 if necessary
+T8D285740 000:118.734    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x0000C000 if necessary
+T8D285740 000:118.738    -- Filling invalid ranges in sector buffer (flash cache) for sector @ 0x0000E000 if necessary
+T8D285740 000:118.777    -- End of determining dirty areas
+T8D285740 000:118.782    -- Start of preparing flash programming
+T8D285740 000:118.786    -- Calculating RAM usage
+T8D285740 000:118.796    -- RAM usage = 8672 Bytes
+T8D285740 000:118.800    -- Preserving CPU registers
+T8D285740 000:118.812    -- Determining CPU clock frequency
+T8D285740 000:129.977    -- Preparing target
+T8D285740 000:132.422    -- Preserving target RAM temporarily used for programming
+T8D285740 000:283.315    -- Preserving additional used target memory
+T8D285740 000:284.643    -- Downloading RAMCode
+T8D285740 000:308.484    -- Preparing RAMCode
+T8D285740 000:316.035    -- CPU frequency = 15216 kHz
+T8D285740 000:316.055    -- End of preparing flash programming
+T8D285740 000:329.813    -- CPU is running at 15216 kHz.
+T8D285740 000:329.869    -- Start of comparing flash
+T8D285740 000:329.880    -- CRC check was estimated as fastest method
+T8D285740 000:331.344    -- Comparing range 0x0000 - 0xFFFF (8 Sectors, 64 KB), using multi-block CRC calculation
+T8D285740 000:451.747    -- CRC does not match for sectors 0, 6
+T8D285740 000:453.696    -- Comparing range 0x2000 - 0xBFFF (5 Sectors, 40 KB), using alternative multi-block CRC calculation
+T8D285740 000:530.056    -- All CRCs match
+T8D285740 000:531.769    -- Comparing range 0xE000 - 0xFFFF (1 Sector, 8 KB), using alternative multi-block CRC calculation
+T8D285740 000:556.066    -- All CRCs match
+T8D285740 000:556.112    -- End of comparing flash
+T8D285740 000:556.123    -- Start of erasing sectors
+T8D285740 000:556.140    -- Erasing range 0x00000000 - 0x00001FFF (  1 Sector, 8 KB)
+T8D285740 000:681.965    -- Erasing range 0x0000C000 - 0x0000DFFF (  1 Sector, 8 KB)
+T8D285740 000:807.479    -- End of erasing sectors
+T8D285740 000:807.582    -- Start of flash programming
+T8D285740 000:807.597    -- Programming range 0x00000000 - 0x00001FFF (  1 Sector, 8 KB)
+T8D285740 001:029.885    -- Programming range 0x0000C000 - 0x0000DFFF (  1 Sector, 8 KB)
+T8D285740 001:248.082    -- End of flash programming
+T8D285740 001:248.157    -- 0x0000 - 0x1FFF (  1 Sector, 8 KB)
+T8D285740 001:248.173    -- 0xC000 - 0xDFFF (  1 Sector, 8 KB)
+T8D285740 001:248.189    -- Start of restoring
+T8D285740 001:248.202    -- Restoring RAMCode
+T8D285740 001:254.020    -- Restoring target memory
+T8D285740 001:378.008    -- Restore target
+T8D285740 001:379.197    -- Restoring CPU registers
+T8D285740 001:379.266    -- End of restoring
+T8D285740 001:379.316    -- Bank 0 @ 0x00000000: 2 ranges affected (16384 bytes)
+T8D285740 001:379.350    -- Total: 1.260s (Prepare: 0.211s, Compare: 0.226s, Erase: 0.251s, Program & Verify: 0.440s, Restore: 0.131s)
+T8D285740 001:379.374    -- Program & Verify speed: 36 KB/s
+T8D285740 001:380.121 - 1263.446ms returns 0x00
+T8D285740 001:380.175 JLINK_ExecCommand("SetVerifyRAMDownload = 0", ...). 
+T8D285740 001:380.188 - 0.004ms returns 0x01
+T8D285740 001:380.234 JLINK_SetResetDelay(0)
+T8D285740 001:380.240 - 0.005ms 
+T8D285740 001:380.246 JLINK_Reset()
+T8D285740 001:380.262   JLINK_GetResetTypeDesc
+T8D285740 001:380.268   - 0.006ms 
+T8D285740 001:380.280   Reset type: HALT_WP (https://wiki.segger.com/J-Link_Reset_Strategies)
+T8D285740 001:380.287   _ResetHaltWP: 
+T8D285740 001:406.081   Resetting TRST
+T8D285740 001:429.198 - 48.949ms 
+T8D285740 001:429.292 JLINK_IsOpen()
+T8D285740 001:429.301 - 0.008ms returns 0x01
+T8D285740 001:436.738 JLINK_Close()
+T8D285740 001:450.252 - 13.511ms
+T8D285740 001:450.293   
+T8D285740 001:450.300   Closed

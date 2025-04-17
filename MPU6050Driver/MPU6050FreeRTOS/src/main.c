@@ -7,6 +7,8 @@
 #include <stdint.h>
 #include "log.h"
 
+#define NRERROR 10
+
 void vApplicationStackOverflowHook( TaskHandle_t xTask, char * pcTaskName )
 {
 	LOG_SERIAL("Stack overflow for task: %s\r\n", pcTaskName);
@@ -72,7 +74,31 @@ void MyTaskWrapper(void *pvParameters)
 uint8_t doneInit = 0, cntWrite = 0, cntRead = 0, cntIndex = 0, cntOperation = 0, lenWrite = 13, lenRead = 13;
 uint8_t regDat[] = {0x6B, 0x00, 0x19, 0x07, 0x1A, 0x00, 0x1B, 0x00, 0x1C, 0x00, 0x23, 0x00, 0x24, 0x00, 0x37, 0x00, 0x38, 0x01, 0x67, 0x00, 0x68, 0x00, 0x6A, 0x00, 0x6C, 0x00, 0x74, 0x00};
 uint8_t measurements[14];
-int32_t results[7];
+uint8_t failedBefore = 0;
+uint8_t numberOfFails = 0;
+
+typedef struct
+{
+	int32_t AX, AY, AZ;
+	int32_t T;
+	int32_t GX, GY, GZ;
+} MeasurementInt;
+
+typedef struct
+{
+	float AX, AY, AZ;
+	float T;
+	float GX, GY, GZ;
+} MeasurementFloat;
+
+typedef struct
+{
+	MeasurementInt measurementINT;
+	MeasurementFloat measurementFLOAT;
+	uint8_t valid;
+} Measurement;
+
+Measurement privateMeasurementVar;
 
 void pollingWrite(uint8_t adresa, uint8_t valoare)
 {
@@ -119,12 +145,6 @@ void pollingWrite(uint8_t adresa, uint8_t valoare)
 		case 0x30: // data sent with NACK
 		{
 			I2CONSET = 0x14;
-			break;
-		}
-		default:
-		{
-				if (I2STAT != 0xF8)
-					LOG_SERIAL("0x%x\n", I2STAT); // for debugging error messages
 			break;
 		}
 	}
@@ -201,12 +221,6 @@ void pollingRead(uint8_t adresa)
 			cntIndex = 0;
 			break;
 		}
-		default:
-		{
-				if (I2STAT != 0xF8)
-					LOG_SERIAL("0x%x\n", I2STAT); // for debugging error messages
-			break;
-		}
 	}
 	if (stat != 0xF8)
 	{
@@ -214,42 +228,68 @@ void pollingRead(uint8_t adresa)
 	}
 }
 
-void processMeasurements()
+void processMeasurements(Measurement *measurement)
 {
 	int16_t ax, ay, az, t, gx, gy, gz;
 	double AX, AY, AZ, T, GX, GY, GZ;
 	ax = ((int16_t)(measurements[0]) << 8) | ((int16_t)(measurements[1]));
-	AX = ((double)ax / 16384.0) * 1000;
+	AX = (double)ax / 16384.0;
 	ay = ((int16_t)(measurements[2]) << 8) | ((int16_t)(measurements[3]));
-	AY = ((double)ay / 16384.0) * 1000;
+	AY = (double)ay / 16384.0;
 	az = ((int16_t)(measurements[4]) << 8) | ((int16_t)(measurements[5]));
-	AZ = ((double)az / 16384.0) * 1000;
+	AZ = (double)az / 16384.0;
 	t = ((int16_t)(measurements[6]) << 8) | ((int16_t)(measurements[7]));
-	T = (((double)t / 340.0) + 36.53) * 1000;
+	T = ((double)t / 340.0) + 36.53;
 	gx = ((int16_t)(measurements[8]) << 8) | ((int16_t)(measurements[9]));
-	GX = ((double)gx / 131.0) * 1000;
+	GX = (double)gx / 131.0;
 	gy = ((int16_t)(measurements[10]) << 8) | ((int16_t)(measurements[11]));
-	GY = ((double)gy / 131.0) * 1000;
+	GY = (double)gy / 131.0;
 	gz = ((int16_t)(measurements[12]) << 8) | ((int16_t)(measurements[13]));
-	GZ = ((double)gz / 131.0) * 1000;
-	results[0] = AX;
-	results[1] = AY;
-	results[2] = AZ;
-	results[3] = T;
-	results[4] = GX;
-	results[5] = GY;
-	results[6] = GZ;
+	GZ = (double)gz / 131.0;
+	if ((AX < -2.0 || AX  > 2.0) || (AY < -2.0 || AY > 2.0) || (AZ < -2.0 || AZ > 2.0) || (GX < -250.0 || GX > 250.0) || (GY < -250.0 || GY > 250.0) || (GZ < -250.0 || GZ > 250.0))
+	{
+		if (failedBefore == 1)
+		{
+			numberOfFails++;
+		}
+		else
+		{
+			failedBefore = 1;
+			numberOfFails++;
+		}
+	}
+	else
+	{
+		failedBefore = 0;
+		numberOfFails = 0;
+	}
+
+	measurement->measurementINT.AX = AX * 1000;
+	measurement->measurementINT.AY = AY * 1000;
+	measurement->measurementINT.AZ = AZ * 1000;
+	measurement->measurementINT.T = T * 1000;
+	measurement->measurementINT.GX = GX * 1000;
+	measurement->measurementINT.GY = GY * 1000;
+	measurement->measurementINT.GZ = GZ * 1000;
+
+	measurement->measurementFLOAT.AY = AY;
+	measurement->measurementFLOAT.AZ = AZ;
+	measurement->measurementFLOAT.T = T;
+	measurement->measurementFLOAT.GX = GX;
+	measurement->measurementFLOAT.GY = GY;
+	measurement->measurementFLOAT.GZ = GZ;
 }
 
-void printResults()
+void printResults(const Measurement *measurement)
 {
-	LOG_SERIAL("Acclerometru : %d.%u %d.%u %d.%u\n", results[0] / 1000, results[0] % 1000, results[1] / 1000, results[1] % 1000, results[2] / 1000, results[2] % 1000);
-	LOG_SERIAL("Temperatura : %d.%u\n", results[3] / 1000, results[3] % 1000);
-	LOG_SERIAL("Giroscop : %d.%u %d.%u %d.%u\n\n", results[4] / 1000, results[4] % 1000, results[5] / 1000, results[5] % 1000,results[6] / 1000, results[6] % 1000);
+	LOG_SERIAL("Acclerometru : %d.%u %d.%u %d.%u\n", measurement->measurementINT.AX / 1000, measurement->measurementINT.AX % 1000, measurement->measurementINT.AY / 1000, measurement->measurementINT.AY % 1000, measurement->measurementINT.AZ / 1000, measurement->measurementINT.AZ % 1000);
+	LOG_SERIAL("Temperatura : %d.%u\n", measurement->measurementINT.T / 1000, measurement->measurementINT.T % 1000);
+	LOG_SERIAL("Giroscop : %d.%u %d.%u %d.%u\n\n", measurement->measurementINT.GX / 1000, measurement->measurementINT.GX % 1000, measurement->measurementINT.GY / 1000, measurement->measurementINT.GY % 1000,measurement->measurementINT.GZ / 1000, measurement->measurementINT.GZ % 1000);
 }
 
 void MPUTask()
 {
+	privateMeasurementVar.valid = 0;
 	if(doneInit == 0) // initializare
 	{
 		pollingWrite(regDat[2 * cntWrite], regDat[2 * cntWrite + 1]);
@@ -258,16 +298,45 @@ void MPUTask()
 	{
 		if(cntRead <= lenRead)
 		{
-			IO0SET = 1u << 24;
+			IO1SET = 1u << 20;
 			pollingRead(0x3B);
 		}
-		else {
-			processMeasurements();
-			printResults();
+		else
+		{
+			processMeasurements(&privateMeasurementVar);
+			if (numberOfFails <= NRERROR)
+			{
+				privateMeasurementVar.valid = 1;
+			}
+			else
+			{
+				privateMeasurementVar.valid = 0;
+				I2CONCLR = 0x00000040;
+			}
 			cntRead = 0;
-			IO0CLR = 1u << 24;
+			IO1CLR = 1u << 20;
 			I2CONSET = 0x00000020; // generate start
 		}
+
+	}
+}
+
+int GetMeasurement(Measurement *data)
+{
+	if (privateMeasurementVar.valid == 1)
+	{
+		memcpy(data, &privateMeasurementVar, sizeof(Measurement));
+		return 1;
+	}
+	return 0;
+}
+
+void userTask()
+{
+	Measurement myMeasurement;
+	if (GetMeasurement(&myMeasurement) == 1)
+	{
+		printResults(&myMeasurement);
 	}
 }
 
@@ -276,7 +345,16 @@ void MPUTaskWrapper(void *pvParameters)
 	for (;;)
 	{
 		MPUTask();
-		vTaskDelay(FREERTOS_US_TO_TICK(1000));
+		vTaskDelay(FREERTOS_US_TO_TICK(750));
+	}
+}
+
+void userTaskWrapper(void *pvParameters)
+{
+	for (;;)
+	{
+		userTask();
+		vTaskDelay(FREERTOS_US_TO_TICK(750));
 	}
 }
 
@@ -293,7 +371,7 @@ int main(void)
 	PINSEL0 |= 5;
 	IO0DIR |= 1 << 30; //P0.30 output
 	PINSEL1 &= ~((1 << 16) | ( 1 << 17 ));
-	IO0DIR |= (1 << 24); //P0.24 output
+	IO1DIR |= (1 << 20); //P1.20 output
 	// Init I2C
 	PINSEL0 |= (1 << 4) | (1 << 6); // I2C
 	I2CONSET = 0x40; // enable I2C
@@ -307,6 +385,7 @@ int main(void)
 
 	xTaskCreate( TaskTest1, "Test1", 100, NULL, 2, ( TaskHandle_t * ) NULL );
 	xTaskCreate(MPUTaskWrapper, "MPU", 500, NULL, 2,  ( TaskHandle_t * ) NULL);
+	xTaskCreate(userTaskWrapper, "USRAPI", 200, NULL, 2,  ( TaskHandle_t * ) NULL);
 	vTaskStartScheduler();
 	//
 

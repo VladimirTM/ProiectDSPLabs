@@ -163,7 +163,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/cmake-build-debug"
+			"value" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -187,7 +187,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "30"
+			"value" : "31"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -199,7 +199,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "5"
+			"value" : "6"
 		},
 		{
 			"name" : "CMAKE_COLOR_DIAGNOSTICS",
@@ -223,7 +223,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/332/bin/cmake/linux/x64/bin/cmake"
+			"value" : "/snap/clion/338/bin/cmake/linux/x64/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -235,7 +235,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/332/bin/cmake/linux/x64/bin/cpack"
+			"value" : "/snap/clion/338/bin/cmake/linux/x64/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -247,7 +247,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/332/bin/cmake/linux/x64/bin/ctest"
+			"value" : "/snap/clion/338/bin/cmake/linux/x64/bin/ctest"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -619,7 +619,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -679,7 +679,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS"
+			"value" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -923,7 +923,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/332/bin/cmake/linux/x64/share/cmake-3.30"
+			"value" : "/snap/clion/338/bin/cmake/linux/x64/share/cmake-3.31"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1187,7 +1187,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS/cmake-build-debug"
+			"value" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS/cmake-build-debug"
 		},
 		{
 			"name" : "FreeRTOS-LPC2000_IS_TOP_LEVEL",
@@ -1211,7 +1211,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/dspproject/ByteBlizzards/MPU6050FreeRTOS"
+			"value" : "/home/dspproject/ByteBlizzards/ByteBlizzards/MPU6050FreeRTOS"
 		}
 	],
 	"kind" : "cache",
