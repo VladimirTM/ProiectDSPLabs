@@ -27,6 +27,8 @@
 /* USER CODE BEGIN Includes */
 #include <demo_task.h>
 #include <FreeRTOS_Helpers.h>
+#include "i2c_ll.h"
+#include "mpu6050_driver.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -137,7 +139,27 @@ void MX_FREERTOS_Init(void) {
   myTestTaskHandle = osThreadNew(myTestTaskStart, NULL, &myTestTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
+
+  /* I2C Task Definition */
+  osThreadId_t i2cTaskHandle;
+  const osThreadAttr_t i2cTask_attributes = {
+      .name = "I2CTask",
+      .stack_size = 256 * 4,
+      .priority = (osPriority_t) osPriorityRealtime7,
+  };
+
+  /* MPU Task Definition */
+  osThreadId_t mpuTaskHandle;
+  const osThreadAttr_t mpuTask_attributes = {
+      .name = "MPUTask",
+      .stack_size = 256 * 4,
+      .priority = (osPriority_t) osPriorityRealtime,
+  };
+
+  /* Create MPU6050 driver tasks */
+  i2cTaskHandle = osThreadNew(I2CTaskWrapper, NULL, &i2cTask_attributes);
+  mpuTaskHandle = osThreadNew(MPUTaskWrapper, NULL, &mpuTask_attributes);
+
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
@@ -180,8 +202,7 @@ void myTestTaskStart(void *argument)
   for(;;)
   {
     MyDemoTask();
-    //osDelay(FREERTOS_MS_TO_TICK(100));
-    osDelay(100);
+    osDelay(FREERTOS_MS_TO_TICK(100));
   }
   /* USER CODE END myTestTaskStart */
 }
